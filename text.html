@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <img id="slider" src="img/Anh%201.png">
+    <button onclick="prev()"> Ảnh trước </button>
+    <button onclick="next()"> Ảnh sau </button>
+</div>
+
+<script>
+    var images = [
+        "anh2.png",
+        "anh3.png",
+        "anh4.png",
+        "anh5.png",
+        "anh6.png",
+        "anh7.png",
+        "anh8.jpg",
+        "anh8.jpg",
+        "anh10.jpg"
+    ];
+    var num = 0;
+
+    function next() {
+        var slider = document.getElementById("slider");
+        num++;
+        if(num >= images.length) {
+            num = 0;
+        }
+        slider.src = images[num];
+    }
+
+    function prev() {
+        var slider = document.getElementById("slider");
+        num--;
+        if(num < 0) {
+            num = images.length-1;
+        }
+        slider.src = images[num];
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <div style="width:450px; height:448px;border: 5px solid deepskyblue">
+        <img src="../hai.jpg" id="slider" height="400" width="450"/><br>
+        <button onclick="start()" id="batdau" style="background-color: deepskyblue">Bắt Đầu</button>
+        <br>
+        <button onclick="tutorial()" id="huongdan" style="background-color: gold">Hướng Dẫn</button>
+    </div>
+</center>
+<script>
+    function tutorial() {
+        alert(" Bạn hãy quan sát bức ảnh rồi liên tưởng hai nhân vật lại sẽ thành đáp án");
+        alert(" Mỗi lần bạn trả lời đúng sẽ cộng thêm 20 điểm ");
+        alert('Mỗi câu hỏi sẽ có 30 giây để trả lời');
+        alert(" Mỗi lần trả lời sai thì sẽ trả lời lại đến hết thời gian mà không trả lời đúng thì bạn sẽ thua và bắt đàu lại");
+        alert("Bạn đã sẵn sàng chưa");
+    }
+    function start(){
+        window.location="duoihinhbatchu.html";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="rePlay()">
+<center>
+    <div style="width:450px; height:470px;border: 5px solid deepskyblue">
+        <img src="Anh 1.png" id="slider" height="400" width="450"/><br>
+        <input type="text" id="nhapdapan" placeholder="Nhập đáp án của bạn" style="background-color:gold"><br>
+        <button onclick="tiepTuc()||rePlay()" style="background-color:red">Tiếp Tục</button>
+        <br>
+        Điểm<input type="text" id="hienthi" readonly style="background-color: deepskyblue; width: 40px"><br>
+        time <input type="text" id="demo">
+    </div>
+</center>
+<script>
+
+
+    var images = [
+        "anh2.png",
+        "anh3.png",
+        "anh4.png",
+        "anh5.png",
+        "anh6.png",
+        "anh7.png",
+        "anh8.jpg",
+        "anh9.jpg",
+        "anh10.jpg",
+        "anh11.jpg",
+        "anh12.jpg",
+        "anh13.jpg",
+        "anh14.jpg",
+        "anh15.jpg",
+    ]
+    let num = 0;
+    let number = 0;
+    let array1 = [
+        'Cung Cầu', 'cungcau', 'CUNGCAU', 'CUNG CAU', 'CUNG CẦU','cung cầu',
+        'Bao Công', 'baocong', 'bao công', 'BAOCONG', 'BAO CÔNG',
+        'Ba hoa', 'Ba Hoa', 'BA HOA', 'BAHOA', 'bahoa',
+        'Bao cao', 'Báo cáo', 'BÁO CÁO', 'BAOCAO', 'baocao','báo cáo',
+        'Mật Mã', 'mật mã', 'MATMA', 'MẬT MÃ', 'matma',
+        'Hoa Hậu', 'hoa hậu', 'hoahau',
+        'Obama', 'obama', 'OBAMA',
+        'bỉ ổi', 'Bỉ Ổi', 'bioi', 'BI OI',
+        'chỉ điểm', 'chi diem', 'Chỉ Điểm', 'chidiem',
+        'tích phân', 'tichphan', 'tich phan',
+        'đầu trâu mặt ngựa', 'dautraumatngua',
+        'ao ước', 'aouoc', 'ao uoc', 'Ao Ước',
+        'chấm công', 'cham cong', 'Chấm Công', 'chamcong',
+        'đinh ba', 'Đinh Ba', 'dinhba',
+        'kiến thức', 'kien thuc', 'kienthuc',
+    ];
+
+    function tiepTuc() {
+        let x = 1;
+        let slider = document.getElementById("slider");
+
+        if (num >= images.length - 1) {
+            alert("Xin chúc mừng bạn đã thành công ");
+            return;
+        }
+        let dapAn = document.getElementById("nhapdapan").value;
+        for (i = 0; i <= array1.length; i++) {
+            if (dapAn == array1[i]) {
+                document.getElementById("nhapdapan").value = "";
+                slider.src = images[num];
+                num++;
+                number = number + 20;
+                document.getElementById('hienthi').value = number;
+                alert('Xin chúc mừng');
+                z = 1;
+                return;
+            }
+        }
+        alert('Bạn đã trả lời sai');
+        return;
+    }
+
+    var z = 1;
+
+    function rePlay() {
+        document.getElementById("demo").value = z++;
+        var y = setTimeout(rePlay, 1000);
+        if (z >= 60) {
+            clearTimeout(y);
+            alert("bạn đã thua")
+            window.location.href='batdau.html';
+            return;
+        }
+    }
+
+
+</script>
+</body>
+</html>
